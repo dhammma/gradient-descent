@@ -1,4 +1,6 @@
 // We only need to import the modules necessary for initial render
+import { injectReducer } from 'store/reducers'
+import { reducer } from 'redux/modules/set'
 import CoreLayout from '../layouts/CoreLayout/CoreLayout'
 import Home from './Home'
 
@@ -8,7 +10,10 @@ import Home from './Home'
 export const createRoutes = (store) => ({
   path        : '/',
   component   : CoreLayout,
-  indexRoute  : Home
+  indexRoute  : Home,
+  onEnter     : () => {
+    injectReducer(store, { key: 'set', reducer })
+  }
 })
 
 /*  Note: childRoutes can be chunked or otherwise loaded programmatically

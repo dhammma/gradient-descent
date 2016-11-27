@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './styles.scss'
-import Plot from '../Plot'
+import Plot from '../../containers/PlotContainer'
 
 export const Home = () => (
   <div className={styles.container}>
