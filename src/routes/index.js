@@ -1,6 +1,7 @@
 // We only need to import the modules necessary for initial render
 import { injectReducer } from 'store/reducers'
-import { reducer } from 'redux/modules/set'
+import { reducer as set } from 'redux/modules/set'
+import { reducer as gradient } from 'redux/modules/gradient'
 import CoreLayout from '../layouts/CoreLayout/CoreLayout'
 import Home from './Home'
 
@@ -12,7 +13,13 @@ export const createRoutes = (store) => ({
   component   : CoreLayout,
   indexRoute  : Home,
   onEnter     : () => {
-    injectReducer(store, { key: 'set', reducer })
+    const modules = { set, gradient }
+
+    Object.keys(modules).forEach(key => {
+      const reducer = modules[key]
+
+      injectReducer(store, { key, reducer })
+    })
   }
 })
 

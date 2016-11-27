@@ -25,7 +25,11 @@ export const addData = (data) => (dispatch, getState) => {
 }
 
 const INITIAL_STATE = {
-  data: []
+  data: [
+    [10, 10],
+    [20, 20],
+    [30, 30]
+  ]
 }
 
 const ACTION_HANDLERS = {
