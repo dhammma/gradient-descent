@@ -15,8 +15,8 @@ class Plot extends PureComponent {
     event.stopPropagation()
 
     const point = [
-      event.clientX - this.plot.offsetLeft,
-      event.clientY - this.plot.offsetTop
+      event.clientX - this.plot.offsetLeft - this.plot.clientLeft,
+      this.plot.clientHeight - event.clientY + this.plot.offsetTop
     ]
 
     this.props.addPoint(point)
@@ -27,7 +27,7 @@ class Plot extends PureComponent {
   }
 
   renderPoint ([x, y]) {
-    const inlineStyle = { left: x, top: y }
+    const inlineStyle = { left: x, bottom: y }
 
     return <div className='point' style={inlineStyle} key={x} />
   }
