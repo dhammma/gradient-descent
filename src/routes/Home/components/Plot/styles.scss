@@ -1,0 +1,16 @@
+.plot {
+  width: 30vw;
+  height: 30vw;
+  border: solid 2px blue;
+  position: relative;
+}
+
+.point {
+  position: absolute;
+  width: 1vw;
+  height: 1vw;
+  background-color: blue;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
