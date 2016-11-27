@@ -1,5 +1,6 @@
 import React, { PureComponent, PropTypes } from 'react'
 import './styles.scss'
+import Line from '../../containers/LineContainer'
 
 class Plot extends PureComponent {
   constructor (...args) {
@@ -36,6 +37,7 @@ class Plot extends PureComponent {
     return (
       <div className='plot' onClick={this.handleClick} ref={this.ref}>
         {this.props.points.map(this.renderPoint)}
+        <Line />
       </div>
     )
   }
