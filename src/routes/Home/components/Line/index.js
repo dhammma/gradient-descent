@@ -6,8 +6,6 @@ const Line = ({ teta0, teta1 }) => {
     transform: `rotate(-${Math.atan(teta1)}rad)`
   }
 
-  console.log(inlineStyle)
-
   return <div className='line' style={inlineStyle} />
 }
 

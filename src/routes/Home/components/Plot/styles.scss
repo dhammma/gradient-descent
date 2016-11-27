@@ -3,6 +3,7 @@
   height: 30vw;
   border: solid 2px blue;
   position: relative;
+  overflow: hidden;
 }
 
 .point {
@@ -18,7 +19,7 @@
 
 .line {
   position: absolute;
-  width: 100%;
+  width: 150%;
   height: .5vw;
   transform: translate(-50%, +50%);
   transform-origin: left bottom;

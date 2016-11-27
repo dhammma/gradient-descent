@@ -26,9 +26,9 @@ export const addData = (data) => (dispatch, getState) => {
 
 const INITIAL_STATE = {
   data: [
-    [10, 20],
-    [20, 40],
-    [30, 60]
+    // [10, 20],
+    // [20, 40],
+    // [30, 60]
   ]
 }
 
