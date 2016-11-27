@@ -40,7 +40,7 @@ export const findSolution = () => (dispatch, getState) => {
 const INITIAL_STATE = {
   teta0: 0,
   teta1: 0,
-  alpha: 0.0005
+  alpha: 0.00005
 }
 
 const ACTION_HANDLERS = {
