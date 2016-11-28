@@ -1,5 +1,6 @@
 import createReducer from 'redux/helpers/reducer'
 
+const RESET_HYPOTHESIS = 'RESET_HYPOTHESIS'
 const UPDATE_HYPOTHESIS = 'UPDATE_HYPOTHESIS'
 
 export const findSolution = () => (dispatch, getState) => {
@@ -9,6 +10,8 @@ export const findSolution = () => (dispatch, getState) => {
   const eps = 0.001
 
   let diff = Number.POSITIVE_INFINITY
+
+  dispatch({ type: RESET_HYPOTHESIS })
 
   do {
     const { teta0, teta1, alpha } = getState().gradient
@@ -44,6 +47,7 @@ const INITIAL_STATE = {
 }
 
 const ACTION_HANDLERS = {
+  [RESET_HYPOTHESIS]: () => INITIAL_STATE,
   [UPDATE_HYPOTHESIS]: (state, action) => ({
     ...state,
     teta0: action.teta0,
